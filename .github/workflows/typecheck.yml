@@ -27,17 +27,17 @@ jobs:
 
       - name: Verify package manifests
         run: |
-          node -e "
-            const fs = require('fs');
-            const packages = ['core', 'analyzer-typescript', 'adapter-fetch', 'adapter-hono', 'framework-detector', 'cli'];
-            for (const pkg of packages) {
-              const pkgJson = JSON.parse(fs.readFileSync(`packages/${pkg}/package.json`, 'utf8'));
-              if (pkgJson.name !== `@neil-jay/${pkg}`) throw new Error(`packages/${pkg} has wrong name: ${pkgJson.name}`);
-              if (pkgJson.private) throw new Error(`${pkgJson.name} must not be private`);
-              if (!pkgJson.license) throw new Error(`${pkgJson.name} is missing license`);
-              console.log(`✓ ${pkgJson.name}`);
-            }
-          "
+          node <<'NODE'
+          const fs = require('fs');
+          const packages = ['core', 'analyzer-typescript', 'adapter-fetch', 'adapter-hono', 'framework-detector', 'cli'];
+          for (const pkg of packages) {
+            const pkgJson = JSON.parse(fs.readFileSync(`packages/${pkg}/package.json`, 'utf8'));
+            if (pkgJson.name !== `@neil-jay/${pkg}`) throw new Error(`packages/${pkg} has wrong name: ${pkgJson.name}`);
+            if (pkgJson.private) throw new Error(`${pkgJson.name} must not be private`);
+            if (!pkgJson.license) throw new Error(`${pkgJson.name} is missing license`);
+            console.log(`✓ ${pkgJson.name}`);
+          }
+          NODE
 
       - name: Verify publishable contents
         run: npm run build && for pkg in core analyzer-typescript adapter-fetch adapter-hono framework-detector cli; do npm pack --dry-run --workspace "packages/$pkg" > /dev/null || exit 1; done
