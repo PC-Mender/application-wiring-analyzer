@@ -31,7 +31,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/PC-Mender/application-wiring-analyzer",
+    "url": "git+https://github.com/PC-Mender/application-wiring-analyzer.git",
     "directory": "packages/core"
   },
   "publishConfig": {
