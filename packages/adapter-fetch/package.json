@@ -1,6 +1,6 @@
 {
   "name": "@neil-jay/adapter-fetch",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fetch/HTTP frontend request extractor for AWA",
   "type": "module",
   "main": "dist/index.js",
@@ -18,8 +18,8 @@
     "test": "node --test tests"
   },
   "dependencies": {
-    "@neil-jay/analyzer-typescript": "^0.1.0",
-    "@neil-jay/core": "^0.1.0",
+    "@neil-jay/analyzer-typescript": "^0.1.1",
+    "@neil-jay/core": "^0.1.1",
     "typescript": "^5.9.0"
   },
   "engines": {

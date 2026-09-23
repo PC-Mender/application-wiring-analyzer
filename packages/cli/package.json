@@ -1,6 +1,6 @@
 {
   "name": "@neil-jay/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Command-line interface for Application Wiring Analyzer",
   "type": "module",
   "bin": {
@@ -21,10 +21,10 @@
     "test": "node --test tests"
   },
   "dependencies": {
-    "@neil-jay/adapter-fetch": "^0.1.0",
-    "@neil-jay/adapter-hono": "^0.1.0",
-    "@neil-jay/core": "^0.1.0",
-    "@neil-jay/framework-detector": "^0.1.0"
+    "@neil-jay/adapter-fetch": "^0.1.1",
+    "@neil-jay/adapter-hono": "^0.1.1",
+    "@neil-jay/core": "^0.1.1",
+    "@neil-jay/framework-detector": "^0.1.1"
   },
   "engines": {
     "node": ">=22"
