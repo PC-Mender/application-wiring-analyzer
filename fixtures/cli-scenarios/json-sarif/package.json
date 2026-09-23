@@ -1,0 +1,7 @@
+{
+  "name": "test-roundtrip",
+  "dependencies": {
+    "react": "^19.0.0",
+    "hono": "^4.0.0"
+  }
+}

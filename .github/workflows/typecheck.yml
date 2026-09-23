@@ -1,0 +1,43 @@
+name: Typecheck and Verify Packages
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  typecheck:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Typecheck (project references build)
+        run: npx tsc -b tsconfig.json --force
+
+      - name: Verify package manifests
+        run: |
+          node -e "
+            const fs = require('fs');
+            const packages = ['core', 'analyzer-typescript', 'adapter-fetch', 'adapter-hono', 'framework-detector', 'cli'];
+            for (const pkg of packages) {
+              const pkgJson = JSON.parse(fs.readFileSync(`packages/${pkg}/package.json`, 'utf8'));
+              if (pkgJson.name !== `@neil-jay/${pkg}`) throw new Error(`packages/${pkg} has wrong name: ${pkgJson.name}`);
+              if (pkgJson.private) throw new Error(`${pkgJson.name} must not be private`);
+              if (!pkgJson.license) throw new Error(`${pkgJson.name} is missing license`);
+              console.log(`✓ ${pkgJson.name}`);
+            }
+          "
+
+      - name: Verify publishable contents
+        run: npm run build && for pkg in core analyzer-typescript adapter-fetch adapter-hono framework-detector cli; do npm pack --dry-run --workspace "packages/$pkg" > /dev/null || exit 1; done

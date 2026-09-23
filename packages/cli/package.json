@@ -1,0 +1,48 @@
+{
+  "name": "@neil-jay/cli",
+  "version": "0.1.0",
+  "description": "Command-line interface for Application Wiring Analyzer",
+  "type": "module",
+  "bin": {
+    "awa": "dist/bin/awa.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "node --test tests"
+  },
+  "dependencies": {
+    "@neil-jay/adapter-fetch": "^0.1.0",
+    "@neil-jay/adapter-hono": "^0.1.0",
+    "@neil-jay/core": "^0.1.0",
+    "@neil-jay/framework-detector": "^0.1.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "cli",
+    "wiring",
+    "static-analysis",
+    "ci"
+  ],
+  "author": "PC-Mender",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PC-Mender/application-wiring-analyzer",
+    "directory": "packages/cli"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

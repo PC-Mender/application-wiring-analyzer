@@ -1,0 +1,10 @@
+{
+  "frontendOnly": true,
+  "frontend": {
+    "roots": ["src"]
+  },
+  "adapters": {
+    "frontend": "fetch",
+    "backend": "hono"
+  }
+}

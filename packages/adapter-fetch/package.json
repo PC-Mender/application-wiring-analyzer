@@ -1,0 +1,44 @@
+{
+  "name": "@neil-jay/adapter-fetch",
+  "version": "0.1.0",
+  "description": "Fetch/HTTP frontend request extractor for AWA",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "node --test tests"
+  },
+  "dependencies": {
+    "@neil-jay/analyzer-typescript": "^0.1.0",
+    "@neil-jay/core": "^0.1.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "keywords": [
+    "fetch",
+    "react",
+    "static-analysis",
+    "extractor"
+  ],
+  "author": "PC-Mender",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PC-Mender/application-wiring-analyzer",
+    "directory": "packages/adapter-fetch"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

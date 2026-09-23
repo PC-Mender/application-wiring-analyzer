@@ -1,0 +1,20 @@
+{
+  "$schema": "https://unpkg.com/@changesets/config@3.0.3/schema.json",
+  "changelog": "@changesets/cli/changelog",
+  "commit": false,
+  "fixed": [
+    [
+      "@neil-jay/cli",
+      "@neil-jay/core",
+      "@neil-jay/analyzer-typescript",
+      "@neil-jay/adapter-fetch",
+      "@neil-jay/adapter-hono",
+      "@neil-jay/framework-detector"
+    ]
+  ],
+  "linked": [],
+  "access": "public",
+  "baseBranch": "main",
+  "updateInternalDependencies": "patch",
+  "ignore": []
+}

@@ -1,0 +1,6 @@
+{
+  "backendOnly": true,
+  "backend": {
+    "roots": ["src"]
+  }
+}

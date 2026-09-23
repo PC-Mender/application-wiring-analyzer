@@ -1,0 +1,6 @@
+{
+  "name": "test-backend-only",
+  "dependencies": {
+    "hono": "^4.0.0"
+  }
+}

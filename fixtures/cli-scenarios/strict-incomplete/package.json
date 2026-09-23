@@ -1,0 +1,7 @@
+{
+  "name": "test-strict-incomplete",
+  "dependencies": {
+    "express": "^4.18.0",
+    "react": "^19.0.0"
+  }
+}

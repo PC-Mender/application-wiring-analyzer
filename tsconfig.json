@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "ignoreDeprecations": "5.0"
+  },
+  "references": [
+    { "path": "packages/core" },
+    { "path": "packages/analyzer-typescript" },
+    { "path": "packages/adapter-fetch" },
+    { "path": "packages/adapter-hono" },
+    { "path": "packages/framework-detector" },
+    { "path": "packages/cli" }
+  ],
+  "exclude": ["node_modules", "dist", "fixtures"]
+}
